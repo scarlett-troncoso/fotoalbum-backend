@@ -6,12 +6,12 @@
             <h1>
                 Photos
             </h1>
-            <a href="{{ route('admin.photos.create') }}">Create</a>
+            <a href="{{ route('admin.photos.create') }}">Crea</a>
         </div>
     </header>
 
     <div class="container mt-4">
-
+        @include('partials.session-messages')
         <div class="table-responsive">
             <table class="table table-light">
                 <thead>
@@ -20,8 +20,9 @@
                         <th scope="col">Foto</th>
                         <th scope="col">Titolo</th>
                         <th scope="col">Slug</th>
-                        <th scope="col">Categoria</th>
-                        <th scope="col">In Evidenza</th>
+                        <!--
+                                                <th scope="col">Categoria</th>
+                                                <th scope="col">In Evidenza</th> -->
                         <th scope="col">Actions</th>
                     </tr>
                 </thead>
@@ -43,14 +44,14 @@
 
                             <td>{{ $photo->title }}</td>
                             <td>{{ $photo->slug }}</td>
-                            {{-- <td>{{ $photo->category }}</td>
-                            <td>{{ $photo->in_evidenza }}</td> --}}
+                            {{-- <td>{{ category }}</td>
+                            <td>{{ in_evidenza }}</td> --}}
 
                             <td>
                                 <a class="btn btn-sm btn-primary" href="{{ route('admin.photos.show', $photo) }}">
                                     <i class="fas fa-eye fa-xs fa-fw"></i>
                                 </a>
-                                <a class="btn btn-sm btn-secondary" href="{*{ route('admin.photos.edit', $photo) }}">
+                                <a class="btn btn-sm btn-secondary" href="{{ route('admin.photos.edit', $photo) }}">
                                     <i class="fas fa-pencil fa-xs fa-fw"></i>
                                 </a>
                                 <a class="btn btn-sm btn-danger" href="#">
