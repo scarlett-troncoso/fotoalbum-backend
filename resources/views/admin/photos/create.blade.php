@@ -19,7 +19,7 @@
             <div class="mb-3">
                 <label for="title" class="form-label">Titolo</label>
                 <input type="text" class="form-control" name="title" id="title" aria-describedby="titleHelper"
-                    placeholder="Learn php" value="{{ old('title') }}" />
+                    placeholder="Titolo per la mia foto" value="{{ old('title') }}" />
                 <small id="titleHelper" class="form-text text-muted">Scrivi qui il un titolo per la foto</small>
             </div>
 
