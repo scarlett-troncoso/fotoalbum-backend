@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\PhotoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +25,7 @@ Route::middleware(['auth', 'verified'])
 ->prefix('admin')
 ->group(function(){
     Route::get('/', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard'); // questa rotta ha sólo il preffisso admin /admin
+    Route::resource('photos', PhotoController::class);
 });
 
 Route::middleware('auth')->group(function () {

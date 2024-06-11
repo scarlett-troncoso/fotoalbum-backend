@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\Models\Photo;
 use App\Http\Requests\StorePhotoRequest;
 use App\Http\Requests\UpdatePhotoRequest;
+use App\Http\Controllers\Controller;
 
 class PhotoController extends Controller
 {
@@ -13,7 +14,8 @@ class PhotoController extends Controller
      */
     public function index()
     {
-        //
+       // dd(Photo::orderByDesc('id')->paginate());
+       return view('admin.photos.index', ['photos' => Photo::orderByDesc('id')->paginate()]);
     }
 
     /**
