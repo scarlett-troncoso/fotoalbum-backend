@@ -17,8 +17,6 @@ return new class extends Migration
             $table->string('upload_image')->nullable();
             $table->text('description')->nullable();
             $table->string('slug');
-            $table->string('category')->nullable();
-            $table->boolean('in_evidenza')->nullable();
             $table->timestamps();
         });
     }
