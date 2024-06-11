@@ -23,7 +23,7 @@ class PhotoController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.photos.create');
     }
 
     /**
@@ -31,7 +31,7 @@ class PhotoController extends Controller
      */
     public function store(StorePhotoRequest $request)
     {
-        //
+        dd($request->all());
     }
 
     /**
