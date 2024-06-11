@@ -21,8 +21,6 @@ class PhotoSeeder extends Seeder
             $photo->upload_image = $faker->imageUrl(600, 400, 'Photos', true, $photo->title, true, 'jpg');
             $photo->description = $faker->paragraphs(4, true);
             $photo->slug = Str::of($photo->title)->slug('-');
-            $photo->category = $faker->words(2, true);
-            $photo->in_evidenza = false;
             $photo->save();
         }
     }
