@@ -6,6 +6,7 @@ use App\Models\Photo;
 use App\Http\Requests\StorePhotoRequest;
 use App\Http\Requests\UpdatePhotoRequest;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Str;
 
 class PhotoController extends Controller
 {
@@ -31,7 +32,12 @@ class PhotoController extends Controller
      */
     public function store(StorePhotoRequest $request)
     {
-        dd($request->all());
+        // dd($request->all());
+        $val_data = $request->validated();
+        //dd($val_data);
+        $val_data['slug'] = Str::slug($request->title, '-');
+        Photo::create($val_data);
+        return to_route('admin.photos.index')->with('message', 'Foto aggiunta con successo !');
     }
 
     /**
