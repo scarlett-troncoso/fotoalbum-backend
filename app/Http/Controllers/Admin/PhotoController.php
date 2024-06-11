@@ -54,7 +54,7 @@ class PhotoController extends Controller
      */
     public function edit(Photo $photo)
     {
-        //
+        return view('admin.photos.edit', compact('photo'));
     }
 
     /**
@@ -62,7 +62,13 @@ class PhotoController extends Controller
      */
     public function update(UpdatePhotoRequest $request, Photo $photo)
     {
-        //
+       // dd($request->all());
+       $val_data = $request->validated();
+       $val_data['slug'] = Str::slug('title', '-');
+
+       $photo->update($val_data);
+
+       return to_route('admin.photos.index')->with('message', 'Foto aggiornata con successo !');
     }
 
     /**
