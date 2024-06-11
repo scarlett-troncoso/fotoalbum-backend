@@ -21,7 +21,7 @@ Route::get('/', function () {
 });
 
 Route::middleware(['auth', 'verified'])
-->name('admin')
+->name('admin.')
 ->prefix('admin')
 ->group(function(){
     Route::get('/', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard'); // questa rotta ha sólo il preffisso admin /admin
