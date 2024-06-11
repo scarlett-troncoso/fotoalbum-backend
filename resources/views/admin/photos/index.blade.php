@@ -6,7 +6,7 @@
             <h1>
                 Photos
             </h1>
-            <a href="{*{ route('admin.photos.create') }}">Create</a>
+            <a href="{{ route('admin.photos.create') }}">Create</a>
         </div>
     </header>
 
@@ -43,8 +43,8 @@
 
                             <td>{{ $photo->title }}</td>
                             <td>{{ $photo->slug }}</td>
-                            <td>{{ $photo->category }}</td>
-                            <td>{{ $photo->in_evidenza }}</td>
+                            {{-- <td>{{ $photo->category }}</td>
+                            <td>{{ $photo->in_evidenza }}</td> --}}
 
                             <td>
                                 <a class="btn btn-sm btn-primary" href="{{ route('admin.photos.show', $photo) }}">
