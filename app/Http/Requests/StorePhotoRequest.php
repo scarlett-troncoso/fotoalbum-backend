@@ -22,7 +22,7 @@ class StorePhotoRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => 'required',
+            'title' => 'required|unique:photos,title',
             'upload_image' => 'required|image|max:200', //massimo 200k
             'description' => 'nullable'
         ];
