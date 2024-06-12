@@ -37,6 +37,9 @@ class PhotoController extends Controller
         $val_data = $request->validated();
         //dd($val_data);
         $val_data['slug'] = Str::slug($request->title, '-');
+        $image_path = Storage::put('uploads', $request->upload_image);
+        $val_data['upload_image'] = $image_path;
+        // dd($val_data);
         Photo::create($val_data);
         return to_route('admin.photos.index')->with('message', 'Foto aggiunta con successo !');
     }
@@ -67,6 +70,17 @@ class PhotoController extends Controller
        $val_data = $request->validated();
        $val_data['slug'] = Str::slug('title', '-');
 
+       if ($request->has('upload_image')) { // if 1:  se cé una upload_image nell mio aggiornamento($request)
+        
+            if ($photo->upload_image) { // if 2: controllare se gia cera una upload_image 
+                
+                Storage::delete($photo->upload_image); //if 2: allora cancellare
+            } 
+        
+            $image_path = Storage::put('uploads', $request->upload_image); // if 1 :  allora recuperare l'immagine e salvarla nel DB
+            $val_data['upload_image'] = $image_path;   
+    }
+    
        $photo->update($val_data);
 
        return to_route('admin.photos.index')->with('message', 'Foto aggiornata con successo !');
