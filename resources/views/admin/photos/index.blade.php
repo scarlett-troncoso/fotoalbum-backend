@@ -21,8 +21,8 @@
                         <th scope="col">Titolo</th>
                         <th scope="col">Slug</th>
                         <!--
-                                                                    <th scope="col">Categoria</th>
-                                                                    <th scope="col">In Evidenza</th> -->
+                                                                            <th scope="col">Categoria</th>
+                                                                            <th scope="col">In Evidenza</th> -->
                         <th scope="col">Actions</th>
                     </tr>
                 </thead>
@@ -104,6 +104,9 @@
                     @endforelse
                 </tbody>
             </table>
+        </div>
+        <div>
+            {{ $photos->links('pagination::bootstrap-5') }}
         </div>
     </div>
 @endsection
