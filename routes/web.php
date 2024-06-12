@@ -25,7 +25,10 @@ Route::middleware(['auth', 'verified'])
 ->prefix('admin')
 ->group(function(){
     Route::get('/', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard'); // questa rotta ha sólo il preffisso admin /admin
-    Route::resource('photos', PhotoController::class);
+    Route::resource('photos', PhotoController::class)
+    ->parameters([ //slug anziché l'id nell path della pagina
+        'photos' => 'photo:slug'
+    ]);
 });
 
 Route::middleware('auth')->group(function () {
