@@ -20,9 +20,6 @@
                         <th scope="col">Foto</th>
                         <th scope="col">Titolo</th>
                         <th scope="col">Slug</th>
-                        <!--
-                                                                            <th scope="col">Categoria</th>
-                                                                            <th scope="col">In Evidenza</th> -->
                         <th scope="col">Actions</th>
                     </tr>
                 </thead>
@@ -44,9 +41,6 @@
 
                             <td>{{ $photo->title }}</td>
                             <td>{{ $photo->slug }}</td>
-                            {{-- <td>{{ category }}</td>
-                            <td>{{ in_evidenza }}</td> --}}
-
                             <td>
                                 <a class="btn btn-sm btn-primary" href="{{ route('admin.photos.show', $photo) }}">
                                     <i class="fas fa-eye fa-xs fa-fw"></i>
