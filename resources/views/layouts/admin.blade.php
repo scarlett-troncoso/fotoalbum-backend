@@ -56,6 +56,18 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('/') }}">{{ __('Home') }}</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('admin.photos.index') }}">
+                                <i class="fas fa-thumbtack"></i> {{ __('Foto') }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('admin.photos.create') }}"><i
+                                    class="fas fa-plus-circle"></i> {{ __('Crea Foto') }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('admin.categories.index') }}"><i
+                                    class="fas fa-folder"></i> {{ __('Categories') }}</a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
