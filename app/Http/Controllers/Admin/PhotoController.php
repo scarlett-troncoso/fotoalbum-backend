@@ -7,6 +7,7 @@ use App\Http\Requests\StorePhotoRequest;
 use App\Http\Requests\UpdatePhotoRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 
 class PhotoController extends Controller
 {
@@ -76,6 +77,13 @@ class PhotoController extends Controller
      */
     public function destroy(Photo $photo)
     {
-        //
+        if ($photo->upload_image) { // questo if lo abbiamo portato da update
+            // if so, delete it
+            Storage::delete($photo->upload_image);
+        }
+        
+        $photo->delete();
+
+        return to_route('admin.photos.index')->with('message', 'Foto cancellata con successo !');
     }
 }
