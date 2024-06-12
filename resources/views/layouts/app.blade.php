@@ -50,6 +50,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('/') }}">{{ __('Home') }}</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('/photos') }}">{{ __('Tutte le Foto') }}</a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
