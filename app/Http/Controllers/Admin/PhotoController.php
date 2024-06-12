@@ -8,6 +8,7 @@ use App\Http\Requests\UpdatePhotoRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
+use App\Models\Category;
 
 class PhotoController extends Controller
 {
@@ -25,7 +26,8 @@ class PhotoController extends Controller
      */
     public function create()
     {
-        return view('admin.photos.create');
+        $categories = Category::all();
+        return view('admin.photos.create', compact('categories'));
     }
 
     /**
@@ -58,7 +60,8 @@ class PhotoController extends Controller
      */
     public function edit(Photo $photo)
     {
-        return view('admin.photos.edit', compact('photo'));
+        $categories = Category::all();
+        return view('admin.photos.edit', compact('photo', 'categories'));
     }
 
     /**
@@ -80,7 +83,7 @@ class PhotoController extends Controller
             $image_path = Storage::put('uploads', $request->upload_image); // if 1 :  allora recuperare l'immagine e salvarla nel DB
             $val_data['upload_image'] = $image_path;   
     }
-    
+
        $photo->update($val_data);
 
        return to_route('admin.photos.index')->with('message', 'Foto aggiornata con successo !');
