@@ -35,7 +35,7 @@
 
             <div class="mb-3">
                 <label for="upload_image" class="form-label">Foto</label>
-                <input type="file" class="form-control" name="upload_image" id="upload_image" placeholder="cover image"
+                <input type="file" class="form-control" name="upload_image" id="upload_image" placeholder="Foto"
                     aria-describedby="uploadImageHelper" />
                 <div id="uploadImageHelper" class="form-text">Carica una foto</div>
             </div>
