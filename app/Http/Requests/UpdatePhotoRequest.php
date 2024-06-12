@@ -24,6 +24,7 @@ class UpdatePhotoRequest extends FormRequest
     {
         return [
             'title' => ['required', Rule::unique('photos')->ignore($this->photo?->id)], //l'unico della tabella 'photos';  controllare che sia l'unico con eccezione di se stesso
+            'category_id' => 'nullable|exists:categories,id', // verificare che quella category esiste nella table categories colonna id
             'upload_image' => 'nullable|image|max:200',
             'description' => 'nullable'
         ];
