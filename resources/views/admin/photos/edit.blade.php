@@ -29,12 +29,15 @@
 
 
             <div class="mb-3">
-                <label for="category" class="form-label">Categoria</label>
-                <select class="form-select form-select-lg" name="category" id="category">
+                <label for="category_id" class="form-label">Categoria</label>
+                <select class="form-select form-select-lg" name="category_id" id="category_id">
                     <option selected disabled>Scegli una</option>
-                    <option value="categories">
-                        Categorie
-                    </option>
+                    @foreach ($categories as $category)
+                        <option value="{{ $category->id }}">
+                            {{ $category->id == old('category_id', $photo->category?->id) ? 'selected' : '' }}>
+                            {{ $category->name }}
+                        </option>
+                    @endforeach
                 </select>
             </div>
 
