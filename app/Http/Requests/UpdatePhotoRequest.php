@@ -23,7 +23,7 @@ class UpdatePhotoRequest extends FormRequest
     {
         return [
             'title' => 'required',
-            'upload_image' => 'nullable|image',
+            'upload_image' => 'nullable|image|max:200',
             'description' => 'nullable'
         ];
     }
