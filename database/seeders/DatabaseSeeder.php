@@ -12,6 +12,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-       $this->call([PhotoSeeder::class]); //php artisan db seed
+       $this->call([
+        PhotoSeeder::class,
+        CategorySeeder::class
+    ]); //php artisan db seed
+       
     }
 }
