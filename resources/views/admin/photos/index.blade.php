@@ -20,7 +20,9 @@
                         <th scope="col">Foto</th>
                         <th scope="col">Titolo</th>
                         <th scope="col">Slug</th>
+                        <th scope="col">In evidenza</th>
                         <th scope="col">Actions</th>
+
                     </tr>
                 </thead>
                 <tbody>
@@ -41,6 +43,10 @@
 
                             <td>{{ $photo->title }}</td>
                             <td>{{ $photo->slug }}</td>
+                            <td>
+                                {{ $photo->in_evidence == true ? 'yes' : 'no' }}
+                                <!--&check; e &cross;-->
+                            </td>
                             <td>
                                 <a class="btn btn-sm btn-primary" href="{{ route('admin.photos.show', $photo) }}">
                                     <i class="fas fa-eye fa-xs fa-fw"></i>
