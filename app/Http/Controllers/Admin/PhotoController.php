@@ -99,7 +99,7 @@ class PhotoController extends Controller
         }
 
        $photo->update($val_data);
-
+       //dd($request->all());
        return to_route('admin.photos.index')->with('message', 'Foto aggiornata con successo !');
     }
 

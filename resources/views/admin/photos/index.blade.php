@@ -25,6 +25,7 @@
 
                     </tr>
                 </thead>
+
                 <tbody>
                     @forelse ($photos as $photo)
                         <tr class="">
@@ -33,7 +34,7 @@
                             <td>
                                 @if (Str::startsWith($photo->upload_image, 'https://'))
                                     <!--se il percorso inizia con https allora é un'immagine del seeder-->
-                                    <img width="140" loading="lazy" src="{{ $photo->upload_image }}" alt="">
+                                    <img width="140" src="{{ $photo->upload_image }}">
                                 @else
                                     <!--  altrimente aggiungere storage/ al percorso-->
                                     <img width="140" loading="lazy" src="{{ asset('storage/' . $photo->upload_image) }}"

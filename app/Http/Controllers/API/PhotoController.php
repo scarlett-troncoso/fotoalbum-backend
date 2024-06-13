@@ -15,6 +15,7 @@ class PhotoController extends Controller
                 //'filter' => $request->filter,
                 'success' => true, 
                 'results' => Photo::with(['category', 'user'])->orderByDesc('id')->where('category_id', $request->filter)->paginate()
+                //'results' => Photo::with(['category', 'user'])->orderByDesc('id')->where('LIMIT' . 'in_evidenza = true' . '<=' '10', $request->filter)->paginate()
             ]);
         }
 
