@@ -97,13 +97,16 @@ class PhotoController extends Controller
                 $image_path = Storage::put('uploads', $request->upload_image); // if 1 :  allora recuperare l'immagine e salvarla nel DB
                 $val_data['upload_image'] = $image_path;   
         }
-        //$post->is_featured = $request->input('is_featured') ? true : false;
-        //$photo->in_evidence = $request->has('in_evidence');
-        //$in_evidence = $request->boolean('in_evidence');
-        $in_evidence = $photo->in_evidence = $request->input('in_evidence') ? true : false;
+        
+        // $photo->in_evidence = $request->has('in_evidence'); // 1 oppure "" vuoto -- cambia il yes o no in index 
+        //$in_evidence = $photo->in_evidence = $request->input('in_evidence') ? true : false; // true e false, anziche 1 e 0. o 1 e null
+        
+        $in_evidence = $request->boolean('in_evidence'); //recuperare valore,  true o false -- fa il cambio
         $val_data['in_evidence'] = $in_evidence;
-       $photo->update($val_data);
-       //dd($request->all());
+
+        $photo->update($val_data);
+        // dd($val_data);
+
        return to_route('admin.photos.index')->with('message', 'Foto aggiornata con successo !');
     }
 
