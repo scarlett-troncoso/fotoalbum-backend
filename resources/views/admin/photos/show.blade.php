@@ -25,7 +25,7 @@
             <div class="col">
                 <strong>Categoria: </strong>
                 <span class="badge bg-dark">
-                    {{ $photo->category ? $post->category->name : 'Uncategorized' }}
+                    {{ $photo->category ? $photo->category->name : 'Uncategorized' }}
                 </span>
                 <p>{{ $photo->description }}</p>
             </div>

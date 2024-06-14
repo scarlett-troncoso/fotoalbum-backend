@@ -27,7 +27,7 @@ class UpdatePhotoRequest extends FormRequest
             'category_id' => 'nullable|exists:categories,id', // verificare che quella category esiste nella table categories colonna id
             'upload_image' => 'nullable|image|max:200',
             'description' => 'nullable',
-            //'in_evidence' => 'nullable|boolean'
+            'in_evidence' => 'boolean'
         ];
     }
 }

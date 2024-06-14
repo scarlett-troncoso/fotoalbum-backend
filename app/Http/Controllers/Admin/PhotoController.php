@@ -85,7 +85,7 @@ class PhotoController extends Controller
 
         // dd($request->all());
         $val_data = $request->validated();
-        $val_data['slug'] = Str::slug('title', '-');
+        $val_data['slug'] = Str::slug($request->title, '-');
 
         if ($request->has('upload_image')) { // if 1:  se cé una upload_image nell mio aggiornamento($request)
             
@@ -97,7 +97,11 @@ class PhotoController extends Controller
                 $image_path = Storage::put('uploads', $request->upload_image); // if 1 :  allora recuperare l'immagine e salvarla nel DB
                 $val_data['upload_image'] = $image_path;   
         }
-
+        //$post->is_featured = $request->input('is_featured') ? true : false;
+        //$photo->in_evidence = $request->has('in_evidence');
+        //$in_evidence = $request->boolean('in_evidence');
+        $in_evidence = $photo->in_evidence = $request->input('in_evidence') ? true : false;
+        $val_data['in_evidence'] = $in_evidence;
        $photo->update($val_data);
        //dd($request->all());
        return to_route('admin.photos.index')->with('message', 'Foto aggiornata con successo !');
@@ -120,6 +124,6 @@ class PhotoController extends Controller
         
         $photo->delete();
 
-        return to_route('admin.photos.index')->with('message', 'Foto cancellata con successo !');
+        return to_route('admin.photos.index', compact('photo'))->with('message', 'Foto cancellata con successo !');
     }
 }
