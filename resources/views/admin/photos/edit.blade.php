@@ -30,22 +30,13 @@
             <div class="d-flex gap-2 flex-wrap">
                 <div class="form-check form-switch" {{ $errors->has('in_evidence') ? 'is-invalid' : '' }}>
                     <input class="form-check-input" type="checkbox" role="switch" id="in_evidence" name="in_evidence"
-                        value="{{ old('in_evidence') }}" {{ $photo->in_evidence == 1 ? 'checked' : '' }}
-                        {{ 'checked' ? 'true' : 'false' }}>
-                    <label class="form-check-label" for="in_evidence">In Evidenza
-                        {{ $photo->in_evidence }}</label>
+                        value="1" {{ old('in_evidence', $photo->in_evidence) == 1 ? 'checked' : '' }}>
+                    <label class="form-check-label" for="in_evidence">In Evidenza</label>
                 </div>
                 @error('in_evidence')
                     <div class="text-danger">{{ $message }}</div>
                 @enderror
             </div>
-
-            <!--<div class="mb-3">
-                                                                                                                                <label for="in_evidence" class="form-label">In Evidenza</label>
-                                                                                                                                <select class="form-select form-select-lg" name="in_evidence" id="in_evidence">
-                                                                                                                                    <option value="0">false</option>
-                                                                                                                                    <option value="1">true</option>-->
-            </select>
     </div>
 
 

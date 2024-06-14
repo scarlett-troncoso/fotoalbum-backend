@@ -23,6 +23,17 @@
                 <small id="titleHelper" class="form-text text-muted">Scrivi qui il un titolo per la foto</small>
             </div>
 
+            <div class="d-flex gap-2 flex-wrap">
+                <div class="form-check form-switch" {{ $errors->has('in_evidence') ? 'is-invalid' : '' }}>
+                    <input class="form-check-input" type="checkbox" role="switch" id="in_evidence" name="in_evidence"
+                        value="1" {{ old('in_evidence') == 1 ? 'checked' : '' }}>
+                    <label class="form-check-label" for="in_evidence">In Evidenza</label>
+                </div>
+                @error('in_evidence')
+                    <div class="text-danger">{{ $message }}</div>
+                @enderror
+            </div>
+
             <div class="mb-3">
                 <label for="category_id" class="form-label">Categoria</label>
                 <select class="form-select form-select-lg" name="category_id" id="category_id">
