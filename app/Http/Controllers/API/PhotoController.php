@@ -10,6 +10,15 @@ class PhotoController extends Controller
 {
     public function index(Request $request){
 
+        
+        if ($request->has('in_evidence')) {
+            return response()->json([
+                //'in_evidence' => $request->in_evidence // in console: data > in_evidence : null
+                'success' => true, 
+                'results' => Photo::where('in_evidence', 1)//with(['category', 'user'])
+            ]);
+        }
+
         if ($request->has('filter')) {
             return response()->json([
                 //'filter' => $request->filter,
@@ -23,7 +32,7 @@ class PhotoController extends Controller
             'success' => true, 
             'results' => Photo::with(['category', 'user'])->orderByDesc('id')->paginate()
             ]);
-        } 
+    } 
 
     public function show($id){
         $photo = Photo::with(['category', 'user'])->where('id', $id)->first(); //il primo che trovi, oppure null, dove l'id sia uguale all'id del parametro di questa function
