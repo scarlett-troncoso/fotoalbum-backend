@@ -14,17 +14,29 @@ class PhotoController extends Controller
         if ($request->has('in_evidence')) {
             return response()->json([
                 'success' => true, 
-                'results' => Photo::where('in_evidence', 1)->get()//with(['category', 'user'])
+                'results' => Photo::with(['category', 'user'])->where('in_evidence', 1)->get()//with(['category', 'user'])
             ]);
         }
 
         if ($request->has('filter')) {
-            return response()->json([
-                //'filter' => $request->filter,
-                'success' => true, 
-                'results' => Photo::with(['category', 'user'])->orderByDesc('id')->where('category_id', $request->filter)->paginate()
-                //'results' => Photo::with(['category', 'user'])->orderByDesc('id')->where('LIMIT' . 'in_evidenza = true' . '<=' '10', $request->filter)->paginate()
-            ]);
+                if ($request->filter == 'senza') {
+                    return response()->json([ //Filtro per la ricerca delle photo senza categoria
+                        'success' => true,
+                        'results' => Photo::with(['category', 'user'])->orderByDesc('id')->whereNull('category_id')->paginate()
+                    ]);
+                } elseif ($request->filter == 'all') {
+                    return response()->json([
+                        'success' => true,
+                        'results' => Photo::with(['category', 'user'])->orderByDesc('id')->whereNotNull('category_id')->paginate()
+                    ]);
+                } else {
+                    return response()->json([
+                        //'filter' => $request->filter,
+                        'success' => true,
+                        'results' => Photo::with(['category', 'user'])->orderByDesc('id')->where('category_id', $request->filter)->paginate() 
+                        //'results' => Photo::with(['category', 'user'])->orderByDesc('id')->where('LIMIT' . 'in_evidenza = true' . '<=' '10', $request->filter)->paginate()
+                    ]);
+                } 
         }
 
         return response()->json([
