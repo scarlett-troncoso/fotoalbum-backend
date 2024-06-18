@@ -1,12 +1,12 @@
 @extends('layouts.admin')
 
 @section('content')
-    <header class="bg-dark text-white py-4">
+    <header class="py-4 title-pages-admin">
         <div class="container d-flex justify-content-between align-items-center">
             <h2>
                 {{ $photo->title }}
             </h2>
-            <a href="{{ route('admin.photos.index') }}">Back</a>
+            <a class="btn fw-bold link-admin-pages" href="{{ route('admin.photos.index') }}">Back</a>
         </div>
     </header>
 
@@ -21,7 +21,7 @@
                     <img loading="lazy" src="{{ asset('storage/' . $photo->upload_image) }}" alt="">
                 @endif
             </div>
-            <div class="col">
+            <div class="col mt-3">
                 <h4>
                     {{ $photo->title }}
                 </h4>

@@ -4,6 +4,47 @@
     box-sizing: border-box;
 }
 
+:root {
+    --ligth-prim: #bfd6d8;
+    --ligth-sec: #a4a9ae;
+    --secondary-grey: #889697;
+    --secondary-green: #8faaac;
+    --check-color: #b06a41;
+    --salmon: #ffac86;
+    --primary-green: #5d7c81;
+    --green-dark: #3a5054;
+    --dark-dark: #424241;
+    --logo-dark: #0d2020;
+  }
+
+  /* Welcome page*/
+.welcome-page {
+    color: var(--dark-dark);
+}
+
+.nav-welcome-page {
+    background-color: var(--ligth-prim) ;
+    color: var(--dark-dark); /**/
+}
+
+.logo-fotoAlbum {
+    color: var(--logo-dark); /**/
+}
+
+/* Index Admin */
+.nav-admin-page {
+    background-color: var(--ligth-prim) ;
+}
+
+.title-pages-admin {
+    background-color: var(--primary-green);
+    color: var(--ligth-prim);
+}
+
+.link-admin-pages{
+    color: var(--dark-dark);
+}
+
 .cont-img {
     width: 140px;
     max-height: 100%;
@@ -17,6 +58,7 @@
     }
 }
 
+/* Show Admin */
 .cont-img-show {
 
     >img{

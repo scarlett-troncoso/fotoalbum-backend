@@ -1,11 +1,11 @@
 @extends('layouts.admin')
 @section('content')
-    <header class="bg-dark text-white py-4">
+    <header class="py-4 title-pages-admin">
         <div class="container d-flex justify-content-between align-items-center">
             <h1>
                 Editare: {{ $photo->title }}
             </h1>
-            <a class="btn btn-secondary" href="{{ route('admin.photos.index') }}">Torna indietro</a>
+            <a class="btn fw-bold link-admin-pages" href="{{ route('admin.photos.index') }}">Torna indietro</a>
         </div>
     </header>
 

@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-    <header class="bg-dark text-white py-4">
+    <header class="py-4 title-pages-admin">
         <div class="container d-flex justify-content-between align-items-center">
             <h1>
                 Categories
@@ -17,12 +17,12 @@
                 <form action="{{ route('admin.categories.store') }}" method="post" class="d-flex">
                     @csrf
                     <div class="mb-3">
-                        <label for="name" class="form-label">Creare nuova categoria: </label>
+                        <label for="name" class="form-label">Crea una nuova categoria: </label>
                         <div class="d-flex">
                             <input type="text" class="form-control" name="name" id="name"
                                 aria-describedby="helpId" placeholder="Nome Categoria" />
 
-                            <button type="submit" class="btn btn-primary btn-sm mx-2">
+                            <button type="submit" class="btn btn-sm btn-secondary mx-2">
                                 <i class="fa fa-plus fa-sm fa-fw"></i>
                             </button>
                         </div>

@@ -1,12 +1,13 @@
 @extends('layouts.admin')
 
 @section('content')
-    <header class="bg-dark text-white py-4">
-        <div class="container d-flex justify-content-between align-items-center">
-            <h1>
+    <header class="py-4 title-pages-admin">
+        <div class=" container d-flex justify-content-between align-items-center">
+            <h2>
                 Photos
-            </h1>
-            <a href="{{ route('admin.photos.create') }}">Crea</a>
+            </h2>
+            <a class="btn fw-bold link-admin-pages" href="{{ route('admin.photos.create') }}">Crea</a>
+
         </div>
     </header>
 

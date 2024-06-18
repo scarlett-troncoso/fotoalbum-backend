@@ -25,11 +25,11 @@
 
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light shadow-sm nav-admin-page">
             <div class="container">
                 <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
-                    <div class="logo-fotoalbum">
-                        <h1>FotoAlbum</h1>
+                    <div class=" logo-fotoAlbum">
+                        <h1 class="display-5 fw-bold">FotoAlbum</h1>
                     </div>
                     {{-- config('app.name', 'Laravel') --}}
                 </a>
@@ -40,23 +40,28 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="collapse navbar-collapse " id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/') }}">{{ __('Home') }}</a>
+                        <li class="nav-item px-3">
+                            <a class="nav-link" href="{{ url('/') }}">
+                                <i class="fas fa-house px-1"></i>{{ __('Home') }}
+                            </a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item px-3">
                             <a class="nav-link" href="{{ route('admin.photos.index') }}">
-                                <i class="fas fa-thumbtack"></i> {{ __('Foto') }}</a>
+                                <i class="fas fa-thumbtack px-1"></i> {{ __('Foto') }}
+                            </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('admin.photos.create') }}"><i
-                                    class="fas fa-plus-circle"></i> {{ __('Crea') }}</a>
+                        <li class="nav-item px-3">
+                            <a class="nav-link" href="{{ route('admin.photos.create') }}">
+                                <i class="fas fa-plus-circle px-1"></i> {{ __('Crea') }}
+                            </a>
                         </li>
-                        <li class="nav-item">
+
+                        <li class="nav-item px-3">
                             <a class="nav-link" href="{{ route('admin.categories.index') }}"><i
-                                    class="fas fa-folder"></i> {{ __('Categories') }}</a>
+                                    class="fas fa-folder px-1"></i> {{ __('Categories') }}</a>
                         </li>
                     </ul>
 
