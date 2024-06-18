@@ -19,7 +19,7 @@
                         <th scope="col">Id</th>
                         <th scope="col">Foto</th>
                         <th scope="col">Titolo</th>
-                        <th scope="col">Slug</th>
+                        <th scope="col">Categoria</th>
                         <th scope="col">In evidenza</th>
                         <th scope="col">Actions</th>
 
@@ -28,22 +28,21 @@
 
                 <tbody>
                     @forelse ($photos as $photo)
-                        <tr class="">
+                        <tr>
                             <td scope="row"> {{ $photo->id }} </td>
 
-                            <td>
+                            <td class="cont-img">
                                 @if (Str::startsWith($photo->upload_image, 'https://'))
                                     <!--se il percorso inizia con https allora é un'immagine del seeder-->
-                                    <img width="140" src="{{ $photo->upload_image }}">
+                                    <img src="{{ $photo->upload_image }}">
                                 @else
                                     <!--  altrimente aggiungere storage/ al percorso-->
-                                    <img width="140" loading="lazy" src="{{ asset('storage/' . $photo->upload_image) }}"
-                                        alt="">
+                                    <img loading="lazy" src="{{ asset('storage/' . $photo->upload_image) }}" alt="">
                                 @endif
                             </td>
 
                             <td>{{ $photo->title }}</td>
-                            <td>{{ $photo->slug }}</td>
+                            <td>{{ $photo->category ? $photo->category->name : 'Senza Categoria' }}</td>
                             <td>
                                 {{ $photo->in_evidence == true ? 'yes' : 'no' }}
                                 <!--&check; e &cross;-->

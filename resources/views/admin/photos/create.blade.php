@@ -3,7 +3,7 @@
     <header class="bg-dark text-white py-4">
         <div class="container d-flex justify-content-between align-items-center">
             <h1>
-                Aggiungere una nuova Foto
+                Aggiungere una Foto
             </h1>
             <a class="btn btn-secondary" href="{{ route('admin.photos.index') }}">Back</a>
         </div>
@@ -23,7 +23,7 @@
                 <small id="titleHelper" class="form-text text-muted">Scrivi qui il un titolo per la foto</small>
             </div>
 
-            <div class="d-flex gap-2 flex-wrap">
+            <div class="d-flex gap-2 flex-wrap mb-3">
                 <div class="form-check form-switch" {{ $errors->has('in_evidence') ? 'is-invalid' : '' }}>
                     <input class="form-check-input" type="checkbox" role="switch" id="in_evidence" name="in_evidence"
                         value="1" {{ old('in_evidence') == 1 ? 'checked' : '' }}>
@@ -34,9 +34,9 @@
                 @enderror
             </div>
 
-            <div class="mb-3">
-                <label for="category_id" class="form-label">Categoria</label>
-                <select class="form-select form-select-lg" name="category_id" id="category_id">
+            <div class="mb-3 w-25">
+                <label for="category_id" class="form-label">Categoria: </label>
+                <select class="form-select form-select-sm" name="category_id" id="category_id">
                     <option selected disabled>Scegli una</option>
                     @foreach ($categories as $category)
                         <option value="{{ $category->id }}" {{ $category->id == old('category_id') ? 'selected' : '' }}>
@@ -48,10 +48,10 @@
             </div>
 
             <div class="mb-3">
-                <label for="upload_image" class="form-label">Foto</label>
+                <label for="upload_image" class="form-label">Aggiunge una foto</label>
                 <input type="file" class="form-control" name="upload_image" id="upload_image" placeholder="Foto"
                     aria-describedby="uploadImageHelper" />
-                <div id="uploadImageHelper" class="form-text">Carica una foto</div>
+                <div id="uploadImageHelper" class="form-text">Dimensione massima della foto a caricare: 200kb</div>
             </div>
 
             <div class="mb-3">
@@ -59,7 +59,7 @@
                 <textarea class="form-control" name="description" id="description" rows="5">{{ old('description') }}</textarea>
             </div>
 
-            <button type="submit" class="btn btn-primary">
+            <button type="submit" class="btn btn-primary mb-3">
                 Crea
             </button>
 

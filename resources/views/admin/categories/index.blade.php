@@ -9,27 +9,27 @@
         </div>
     </header>
 
-    <div class="container mt-4">
+    <div class="container mt-4 ">
         @include('partials.session-messages')
 
-        <div class="row row-cols-1 row-cols-md-2 g-4">
-            <div class="col-2">
+        <div class="row row-cols-1 row-cols-md-2 g-4 w-75 m-auto">
+            <div class="col-2 w-25">
                 <form action="{{ route('admin.categories.store') }}" method="post" class="d-flex">
                     @csrf
                     <div class="mb-3">
                         <label for="name" class="form-label">Creare nuova categoria: </label>
                         <div class="d-flex">
-                            <input type="text" class="form-control m-50" name="name" id="name"
+                            <input type="text" class="form-control" name="name" id="name"
                                 aria-describedby="helpId" placeholder="Nome Categoria" />
 
-                            <button type="submit" class="btn btn-primary btn-sm m-50">
+                            <button type="submit" class="btn btn-primary btn-sm mx-2">
                                 <i class="fa fa-plus fa-sm fa-fw"></i>
                             </button>
                         </div>
                     </div>
                 </form>
             </div>
-            <div class="col-2">
+            <div class="col-2 w-75">
                 <div class="table-responsive">
                     <table class="table table-light">
                         <thead>
@@ -51,8 +51,8 @@
                                             @csrf
                                             @method('PATCH') <!---patch perche sará sólo un campo-->
                                             <div class="mb-3">
-                                                <input type="text" class="form-control" name="name" id="name"
-                                                    aria-describedby="helpId" placeholder=""
+                                                <input type="text" class="form-control form-control-sm" name="name"
+                                                    id="name" aria-describedby="helpId" placeholder=""
                                                     value="{{ $category->name }}" />
                                             </div>
                                         </form>
