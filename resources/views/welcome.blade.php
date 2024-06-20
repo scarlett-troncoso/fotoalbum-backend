@@ -20,7 +20,7 @@
             </div>
 
             <span class="col-md-8 fs-5 m-auto">
-                Saremo gratti di ampliare la nostra comunity
+                Saremo grati di ampliare la nostra community
             </span>
 
         </div>

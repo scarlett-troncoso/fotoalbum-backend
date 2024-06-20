@@ -39,12 +39,12 @@ class PhotoController extends Controller
                 } 
         }
 
-        if ($request->has('in_evidence')) {
+        /*if ($request->has('in_evidence')) {
             return response()->json([
                 'success' => true, 
                 'results' => Photo::with(['category', 'user'])->where('in_evidence', 1)->get()//with(['category', 'user'])
             ]);
-        }
+        }*/
 
         return response()->json([
             'success' => true, 
