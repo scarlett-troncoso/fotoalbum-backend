@@ -13,7 +13,7 @@ class PhotoController extends Controller
         if ($request->has('search')) { // se la richiesta ha un search
             return response()->json([ 
                 //'search' => $request->search 
-                'success' => true, // key, in questo caso non é indispensabile nella prossima route invece si
+                'success' => true,
                 'results' => Photo::with(['category', 'user'])->orderByDesc('id')->where('title', 'LIKE', '%' . $request->search . '%')->paginate() // $request->search sarebbe la parola inserita nell search alla stessa volta sarebbe la key nell'api 'search': 'parola'
             ]);
         }
@@ -34,17 +34,9 @@ class PhotoController extends Controller
                         //'filter' => $request->filter,
                         'success' => true,
                         'results' => Photo::with(['category', 'user'])->orderByDesc('id')->where('category_id', $request->filter)->paginate() 
-                        //'results' => Photo::with(['category', 'user'])->orderByDesc('id')->where('LIMIT' . 'in_evidenza = true' . '<=' '10', $request->filter)->paginate()
                     ]);
                 } 
         }
-
-        /*if ($request->has('in_evidence')) {
-            return response()->json([
-                'success' => true, 
-                'results' => Photo::with(['category', 'user'])->where('in_evidence', 1)->get()//with(['category', 'user'])
-            ]);
-        }*/
 
         return response()->json([
             'success' => true, 
