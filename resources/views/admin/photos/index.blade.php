@@ -1,36 +1,35 @@
 @extends('layouts.admin')
 
 @section('content')
-    <header class="py-4 title-pages-admin">
+    <header class="py-3 title-pages-admin">
         <div class=" container d-flex justify-content-between align-items-center">
-            <h2>
-                Photos
+            <h2 class="m-auto">
+                <i class="fas fa-camera fa-lg px-1"></i>
+                Foto di {{ Auth::user()->name }}
             </h2>
-            <a class="btn fw-bold link-admin-pages" href="{{ route('admin.photos.create') }}">Crea</a>
-
+            <!--<a class="btn fw-bold link-admin-pages" href="{*{ route('admin.photos.create') }}">Crea</a>-->
         </div>
     </header>
 
     <div class="container mt-4">
         @include('partials.session-messages')
-        <div class="table-responsive">
-            <table class="table table-light">
+        <div class="table-responsive ">
+            <table class="table w-75 m-auto table-success">
                 <thead>
-                    <tr>
-                        <th scope="col">Id</th>
-                        <th scope="col">Foto</th>
-                        <th scope="col">Titolo</th>
-                        <th scope="col">Categoria</th>
-                        <th scope="col">In evidenza</th>
-                        <th scope="col">Actions</th>
-
+                    <tr class="">
+                        <th scope="col" class="py-3">Id</th>
+                        <th scope="col" class="py-3">Foto</th>
+                        <th scope="col" class="py-3">Titolo</th>
+                        <th scope="col" class="py-3">Categoria</th>
+                        <th scope="col" class="py-3">In evidenza</th>
+                        <th scope="col" class="py-3">Actions</th>
                     </tr>
                 </thead>
 
                 <tbody>
                     @forelse ($photos as $photo)
                         <tr>
-                            <td scope="row"> {{ $photo->id }} </td>
+                            <td scope="row" class="text-center"> {{ $photo->id }} </td>
 
                             <td class="cont-img">
                                 @if (Str::startsWith($photo->upload_image, 'https://'))
@@ -42,11 +41,11 @@
                                 @endif
                             </td>
 
-                            <td>{{ $photo->title }}</td>
+                            <td class="ml-3">{{ $photo->title }}</td>
                             <td>{{ $photo->category ? $photo->category->name : 'Senza Categoria' }}</td>
-                            <td>
-                                {{ $photo->in_evidence == true ? 'yes' : 'no' }}
-                                <!--&check; e &cross;-->
+                            <td class="text-center">
+                                <i
+                                    class=" text-center {{ $photo->in_evidence == true ? 'fas fa-circle-check fa-lg fa-fw text-success' : 'fas fa-circle-xmark fa-fw fa-lg text-danger' }}"></i>
                             </td>
                             <td>
                                 <a class="btn btn-sm btn-primary" href="{{ route('admin.photos.show', $photo) }}">

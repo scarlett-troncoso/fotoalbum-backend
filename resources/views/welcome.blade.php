@@ -4,7 +4,7 @@
         <div class="container py-5 text-center">
 
             <h4>
-                Benvenudo in
+                Benvenuto in
             </h4>
 
             <div class="logo-fotoAlbum">
@@ -16,7 +16,7 @@
             </div>
 
             <div class="col-md-8 fs-5 m-auto">
-                Altrimente resgistrati.
+                Oppure registrati.
             </div>
 
             <span class="col-md-8 fs-5 m-auto">

@@ -17,6 +17,27 @@
     --logo-dark: #0d2020;
   }
 
+
+
+  /* Utilities */
+  .prim-green {
+    background-color: var(--primary-green);
+}
+
+.light-prim {
+    color: var(--ligth-prim);
+}
+
+.orange {
+    color: var(--check-color);
+}
+
+.bg-green-dark {
+    background-color: var(--green-dark);
+}
+
+
+
   /* Welcome page*/
 .welcome-page {
     color: var(--dark-dark);
@@ -31,15 +52,21 @@
     color: var(--logo-dark); /**/
 }
 
+.nav-element {
+    width: calc(100% / 3 * 1);
+}
+
 /* Index Admin */
 .nav-admin-page {
     background-color: var(--ligth-prim) ;
 }
 
 .title-pages-admin {
-    background-color: var(--primary-green);
+    background-color: var(--green-dark);
     color: var(--ligth-prim);
 }
+
+
 
 .link-admin-pages{
     color: var(--dark-dark);
@@ -60,9 +87,21 @@
 
 /* Show Admin */
 .cont-img-show {
-
+    margin-bottom: 1rem;
     >img{
         max-width: 100%;
         max-height: 95vh;
     }
 }
+
+
+.formCreate {
+    color: var(--ligth-prim);
+    font-size: large;
+}
+
+.color-bg-form {
+    background-color: var(--primary-green);
+    width: 80%;
+}
+

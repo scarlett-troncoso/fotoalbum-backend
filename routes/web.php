@@ -25,7 +25,8 @@ Route::middleware(['auth', 'verified'])
 ->name('admin.')
 ->prefix('admin')
 ->group(function(){
-    Route::get('/', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard'); // questa rotta ha sólo il preffisso admin /admin
+    /*Route::get('/', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');*/ // questa rotta ha sólo il preffisso admin /admin
+    Route::get('/', [PhotoController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard'); // In tanto che non ho una dashboard sto direzionando diretamente a tutte le foto, dopo di aver effetuato il login
     Route::resource('photos', PhotoController::class)
     ->parameters([ //slug anziché l'id nell path della pagina
         'photos' => 'photo:slug'

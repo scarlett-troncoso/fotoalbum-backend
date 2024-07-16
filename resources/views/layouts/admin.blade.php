@@ -23,54 +23,61 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body>
+<body class="prim-green">
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light shadow-sm nav-admin-page">
             <div class="container">
-                <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
-                    <div class=" logo-fotoAlbum">
-                        <h1 class="display-5 fw-bold">FotoAlbum</h1>
+
+                <!--<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="{*{ __('Toggle navigation') }}">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>-->
+
+                <div class="collapse navbar-collapse d-flex" id="navbarSupportedContent">
+                    <div class="nav-element">
+                        <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
+                            <div class="logo-fotoAlbum ">
+                                <h1 class="display-5 fw-bold">FotoAlbum</h1>
+                            </div>
+                            {{-- config('app.name', 'Laravel') --}}
+                        </a>
                     </div>
-                    {{-- config('app.name', 'Laravel') --}}
-                </a>
-
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse " id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav me-auto">
+                    <ul class="navbar-nav m-auto nav-element">
+                        <!--<li class="nav-item px-3">
+                                <a class="nav-link" href="{*{ url('/') }}">
+                                    <i class="fas fa-house px-1"></i>{*{ __('Home') }}
+                                </a>
+                            </li>-->
                         <li class="nav-item px-3">
-                            <a class="nav-link" href="{{ url('/') }}">
-                                <i class="fas fa-house px-1"></i>{{ __('Home') }}
+                            <a class="nav-link {{ Request::routeIs('admin.photos.index') ? 'active' : '' }}"
+                                href="{{ route('admin.photos.index') }}">
+                                <i class="fas fa-camera px-1"></i>
+                                {{ __('Foto') }}
                             </a>
                         </li>
                         <li class="nav-item px-3">
-                            <a class="nav-link" href="{{ route('admin.photos.index') }}">
-                                <i class="fas fa-thumbtack px-1"></i> {{ __('Foto') }}
-                            </a>
-                        </li>
-                        <li class="nav-item px-3">
-                            <a class="nav-link" href="{{ route('admin.photos.create') }}">
+                            <a class="nav-link {{ Request::routeIs('admin.photos.create') ? 'active' : '' }}"
+                                href="{{ route('admin.photos.create') }}">
                                 <i class="fas fa-plus-circle px-1"></i> {{ __('Crea') }}
                             </a>
                         </li>
 
                         <li class="nav-item px-3">
-                            <a class="nav-link" href="{{ route('admin.categories.index') }}"><i
-                                    class="fas fa-folder px-1"></i> {{ __('Categories') }}</a>
+                            <a class="nav-link {{ Request::routeIs('admin.categories.index') ? 'active' : '' }}"
+                                href="{{ route('admin.categories.index') }}"><i class="fas fa-palette px-1"></i>
+                                {{ __('Categories') }}</a>
                         </li>
                     </ul>
 
+
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
+                    <ul class="navbar-nav ml-auto nav-element justify-content-end">
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }} active </a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
@@ -85,11 +92,11 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ url('admin') }}">{{ __('Dashboard') }}</a>
+                                    <!--<a class="dropdown-item" href="{*{ url('admin') }}">{*{ __('Dashboard') }}</a>-->
                                     <a class="dropdown-item" href="{{ url('profile') }}">{{ __('Profile') }}</a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
-                                                            document.getElementById('logout-form').submit();">
+                                                                document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
 
@@ -104,7 +111,7 @@
             </div>
         </nav>
 
-        <main class="">
+        <main class="prim-green">
             @yield('content')
         </main>
     </div>

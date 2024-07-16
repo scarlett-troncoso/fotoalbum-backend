@@ -1,28 +1,28 @@
 @extends('layouts.admin')
 
 @section('content')
-    <header class="py-4 title-pages-admin">
-        <div class="container d-flex justify-content-between align-items-center">
-            <h1>
-                Categories
-            </h1>
+    <header class="py-3 title-pages-admin">
+        <div class="container text-center">
+            <h2>
+                <i class="fas fa-palette fa-lg px-1"></i>Categories
+            </h2>
         </div>
     </header>
 
     <div class="container mt-4 ">
         @include('partials.session-messages')
 
-        <div class="row row-cols-1 row-cols-md-2 g-4 w-75 m-auto">
-            <div class="col-2 w-25">
+        <div class="row w-75 m-auto">
+            <div class="col-2 w-25 mr-5">
                 <form action="{{ route('admin.categories.store') }}" method="post" class="d-flex">
                     @csrf
                     <div class="mb-3">
-                        <label for="name" class="form-label">Crea una nuova categoria: </label>
+                        <label for="name" class="form-label light-prim">Crea una nuova categoria: </label>
                         <div class="d-flex">
                             <input type="text" class="form-control" name="name" id="name"
                                 aria-describedby="helpId" placeholder="Nome Categoria" />
 
-                            <button type="submit" class="btn btn-sm btn-secondary mx-2">
+                            <button type="submit" class="btn btn-sm btn-light mx-2">
                                 <i class="fa fa-plus fa-sm fa-fw"></i>
                             </button>
                         </div>
@@ -31,7 +31,7 @@
             </div>
             <div class="col-2 w-75">
                 <div class="table-responsive">
-                    <table class="table table-light">
+                    <table class="table table-success">
                         <thead>
                             <tr>
                                 <th scope="col">Id</th>
@@ -58,7 +58,7 @@
                                         </form>
                                     </td>
                                     <td>{{ $category->slug }}</td>
-                                    <td>
+                                    <td class="text-center">
                                         {{ $category->photos->count() }}
                                     </td>
 
