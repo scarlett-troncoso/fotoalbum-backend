@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
-    <div class="jumbotron p-5 mb-4 vh-100 welcome-page bg-light-sec m-auto">
-        <div class="container py-5 text-center">
+    <div class="p-5 mb-4 vh-100 dark m-auto">
+        <div class="container py-5 text-center bg-color w-50">
 
             <h4 class="col-md-8 fs-5 f-merienda m-auto">
                 Benvenuto in

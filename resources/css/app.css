@@ -28,9 +28,6 @@
 .prim-green {
     background-color: var(--primary-green);
 }
-.bg-light-sec {
-    background-color: var(--ligth-sec);
-}
 .light-prim {
     color: var(--ligth-prim);
 }
@@ -52,6 +49,9 @@
 .bg-categ-green {
     background-color: var(--categ-green);
 }
+.dark {
+    color: var(--dark-dark);
+}
 .opacity-7 {
     opacity: 0.7;
 }
@@ -59,10 +59,6 @@
 
 
 /* Welcome page*/
-
-.welcome-page {
-    color: var(--dark-dark);
-}
 .nav-welcome-page {
     background-color: rgba(192, 214, 216, 0.3) ;
     color: var(--dark-dark);
@@ -78,6 +74,9 @@
 }
 .nav-element {
     width: calc(100% / 3 * 1);
+}
+.bg-color {
+    background-color: rgba(192, 214, 216, 0.7) ;
 }
 
 
