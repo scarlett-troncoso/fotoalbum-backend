@@ -1,9 +1,9 @@
 @extends('layouts.app')
 @section('content')
-    <div class="jumbotron p-5 mb-4 vh-100 welcome-page bg-light">
+    <div class="jumbotron p-5 mb-4 vh-100 welcome-page bg-light-sec m-auto">
         <div class="container py-5 text-center">
 
-            <h4>
+            <h4 class="col-md-8 fs-5 f-merienda m-auto">
                 Benvenuto in
             </h4>
 
@@ -11,17 +11,13 @@
                 <h1 class="display-5 fw-bold">FotoAlbum</h1>
             </div>
 
-            <div class="col-md-8 fs-5 m-auto">
-                Se hai un account accedi.
-            </div>
-
-            <div class="col-md-8 fs-5 m-auto">
-                Oppure registrati.
-            </div>
-
-            <span class="col-md-8 fs-5 m-auto">
+            <p class="col-md-8 fs-5 f-merienda m-auto">
+                Se hai un account accedi. <br />
+                Oppure registrati.<br />
                 Saremo grati di ampliare la nostra community
-            </span>
+            </p>
+
+            <i class="fa-regular fa-face-smile fa-xl"></i>
 
         </div>
     </div>

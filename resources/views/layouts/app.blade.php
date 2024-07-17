@@ -10,17 +10,25 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <link rel="stylesheet" href="{{ asset('css/1.css') }}">
+    <!--<link rel="stylesheet" href="{*{ asset('css/1.css') }}">-->
+
     <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&family=Patua+One&display=swap"
+        rel="stylesheet">
+
+    <!-- FontAwesome 6.2.0 CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Usando Vite -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
 <body>
-    <div id="app">
+    <div id="app" class="bg-image-app-blade">
 
         <nav class="navbar navbar-expand-md navbar-light shadow-sm nav-welcome-page">
             <div class="container">
@@ -40,10 +48,10 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
-                        <!--<li class="nav-item">
-                            <a class="nav-link" href="{*{ url('/') }}">{*{ __('Home') }}</a>
-                        </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="{{ url('/') }}">{{ __('Home') }}</a>
+                        </li>
+                        <!--<li class="nav-item">
                             <a class="nav-link" href="{*{ url('/admin/photos') }}">{*{ __('Tutte le Foto') }}</a>
                         </li>-->
                     </ul>

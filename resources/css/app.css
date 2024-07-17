@@ -5,13 +5,14 @@
 }
 
 :root {
-    --ligth-prim: #bfd6d8;
+    --ligth-prim: rgb(192, 214, 216);
     --ligth-sec: #a4a9ae;
     --secondary-grey: #889697;
     --secondary-green: #8faaac;
     --check-color: #b06a41;
     --salmon: #ffac86;
-    --primary-green: #5d7c81;
+    --primary-green: rgb(93, 124, 129);
+    --categ-green: #386246;
     --green-dark: #3a5054;
     --dark-dark: #424241;
     --logo-dark: #0d2020;
@@ -19,59 +20,104 @@
 
 
 
-  /* Utilities */
-  .prim-green {
+/* Utilities */
+
+.f-merienda {
+    font-family: 'Merienda', sans-serif;
+}
+.prim-green {
     background-color: var(--primary-green);
 }
-
+.bg-light-sec {
+    background-color: var(--ligth-sec);
+}
 .light-prim {
     color: var(--ligth-prim);
 }
-
+.bg-light-prim {
+    background-color: var(--ligth-prim);
+}
 .orange {
     color: var(--check-color);
 }
-
+.green-dark {
+    color: var(--green-dark)
+}
 .bg-green-dark {
     background-color: var(--green-dark);
 }
+.categ-green {
+    color: var(--categ-green);
+}
+.bg-categ-green {
+    background-color: var(--categ-green);
+}
+.opacity-7 {
+    opacity: 0.7;
+}
 
 
 
-  /* Welcome page*/
+/* Welcome page*/
+
 .welcome-page {
     color: var(--dark-dark);
 }
-
 .nav-welcome-page {
-    background-color: var(--ligth-prim) ;
-    color: var(--dark-dark); /**/
+    background-color: rgba(192, 214, 216, 0.3) ;
+    color: var(--dark-dark);
 }
-
 .logo-fotoAlbum {
-    color: var(--logo-dark); /**/
+    color: var(--logo-dark);
+    font-family: 'Patua One', serif;
+    font-weight: 400;
 }
-
+.fonts {
+    font-weight: 400;
+    font-style: normal;
+}
 .nav-element {
     width: calc(100% / 3 * 1);
 }
 
+
+/* App-blade */
+
+.bg-image-app-blade{
+    background-image: url('../../public/img/abdelrahman-ismail-dup6P2XdLMY-unsplash.jpg');
+   background-size: cover;
+   background-repeat: no-repeat;
+   height: 100vh;
+}
+
+/* Admin-blade */
+.bg-image-admin-blade{
+    background-image: url('../../public/img/fethi-bouhaouchine-GIL1kFBRoew-unsplash.jpg');
+   background-size: cover;
+   background-repeat: no-repeat;
+   height: 100vh;
+}
+
+
 /* Index Admin */
+
 .nav-admin-page {
     background-color: var(--ligth-prim) ;
 }
-
-.title-pages-admin {
-    background-color: var(--green-dark);
-    color: var(--ligth-prim);
+.bg-image-index-blade{
+    background-image: url('../../public/img/fethi-bouhaouchine-GIL1kFBRoew-unsplash.jpg');
+   background-size: cover;
+   background-repeat: repeat;
 }
-
-
-
+.title-pages-admin {
+    background-color: var(--primary-green);
+    color: var(--ligth-prim);
+    height: 60px;
+    align-content: center;
+}
 .link-admin-pages{
     color: var(--dark-dark);
 }
-
 .cont-img {
     width: 140px;
     max-height: 100%;
@@ -86,6 +132,9 @@
 }
 
 /* Show Admin */
+.cont-show {
+    background-color: rgba(192, 214, 216, 0.7) ;
+}
 .cont-img-show {
     margin-bottom: 1rem;
     >img{
@@ -95,13 +144,17 @@
 }
 
 
+/* create/edit-blade */
+
 .formCreate {
     color: var(--ligth-prim);
     font-size: large;
 }
 
 .color-bg-form {
-    background-color: var(--primary-green);
+    background-color: rgba(93, 124, 129, 0.6); /*var(--primary-green)*/
     width: 80%;
 }
+
+
 

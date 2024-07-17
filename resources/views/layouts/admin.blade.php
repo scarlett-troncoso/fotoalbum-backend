@@ -11,8 +11,14 @@
     <title>{{ config('app.name', 'fotoAlbum') }}</title>
 
     <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <!--<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap" rel="stylesheet">-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&family=Patua+One&display=swap"
+        rel="stylesheet">
+
 
     <!-- FontAwesome 6.2.0 CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
@@ -23,8 +29,8 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="prim-green">
-    <div id="app">
+<body class="bg-image-admin-blade"> <!--prim-green -->
+    <div id="app" class="">
         <nav class="navbar navbar-expand-md navbar-light shadow-sm nav-admin-page">
             <div class="container">
 
@@ -43,28 +49,28 @@
                             {{-- config('app.name', 'Laravel') --}}
                         </a>
                     </div>
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav m-auto nav-element">
-                        <!--<li class="nav-item px-3">
-                                <a class="nav-link" href="{*{ url('/') }}">
-                                    <i class="fas fa-house px-1"></i>{*{ __('Home') }}
-                                </a>
-                            </li>-->
-                        <li class="nav-item px-3">
+                    <!-- Left Side Of Navbar px-3-->
+                    <ul class="navbar-nav m-auto nav-element d-flex justify-content-between">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('/') }}">
+                                <i class="fas fa-house px-1"></i>{{ __('Home') }}
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link {{ Request::routeIs('admin.photos.index') ? 'active' : '' }}"
                                 href="{{ route('admin.photos.index') }}">
                                 <i class="fas fa-camera px-1"></i>
                                 {{ __('Foto') }}
                             </a>
                         </li>
-                        <li class="nav-item px-3">
+                        <li class="nav-item">
                             <a class="nav-link {{ Request::routeIs('admin.photos.create') ? 'active' : '' }}"
                                 href="{{ route('admin.photos.create') }}">
                                 <i class="fas fa-plus-circle px-1"></i> {{ __('Crea') }}
                             </a>
                         </li>
 
-                        <li class="nav-item px-3">
+                        <li class="nav-item">
                             <a class="nav-link {{ Request::routeIs('admin.categories.index') ? 'active' : '' }}"
                                 href="{{ route('admin.categories.index') }}"><i class="fas fa-palette px-1"></i>
                                 {{ __('Categories') }}</a>
@@ -111,7 +117,7 @@
             </div>
         </nav>
 
-        <main class="prim-green">
+        <main class="bg-image-admin-blade">
             @yield('content')
         </main>
     </div>
