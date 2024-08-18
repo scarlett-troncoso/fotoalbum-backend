@@ -33,3 +33,5 @@ Route::get('photos/{photo}', [PhotoController::class, 'show']);
 Route::get('categories', function(){
     return Category::all();
 }); //http://127.0.0.1:8000/api/categories
+
+Route::get('evidences', [PhotoController::class, 'index']);
