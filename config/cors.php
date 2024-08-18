@@ -19,7 +19,7 @@ return [
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => ['https://scarlett-troncoso.github.io'], // autorizzazione a github di fare richieste alla mia API
+    'allowed_origins' => ['*'],
 
     'allowed_origins_patterns' => [],
 
